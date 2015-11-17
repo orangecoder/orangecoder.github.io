@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[orangecoder]]></title>
+  <subtitle><![CDATA[android ffmpeg nodejs]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://orangecoder.github.io/"/>
+  <updated>2015-11-17T06:53:33.000Z</updated>
+  <id>http://orangecoder.github.io/</id>
+  
+  <author>
+    <name><![CDATA[李晓平]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[git 常用命令]]></title>
+    <link href="http://orangecoder.github.io/2015/10/23/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://orangecoder.github.io/2015/10/23/git-常用命令/</id>
+    <published>2015-10-22T16:40:08.000Z</published>
+    <updated>2015-11-17T06:53:33.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="1-_初始化一个项目">1. 初始化一个项目</h3><pre><code><span class="keyword">mkdir</span> <span class="keyword">App</span>
+<span class="keyword">cd</span> <span class="keyword">App</span>
+git init
+touch README
+git add README
+git commit -<span class="keyword">m</span> 'first commit'
+git remote add origin git@github.com:orangecoder/<span class="keyword">App</span>.git
+git push -<span class="keyword">u</span> origin master
+</code></pre><h3 id="2-_让gitignore文件生效命令">2. 让gitignore文件生效命令</h3><pre><code>git rm -r <span class="comment">--cached .</span>
+</code></pre><a id="more"></a>    
+<h3 id="3-_远程仓库相关命令">3. 远程仓库相关命令</h3><pre><code>检出仓库：$ git <span class="built_in">clone</span> git://github.com/jquery/jquery.git
+查看远程仓库：$ git remote -v
+添加远程仓库：$ git remote add [name] [url]
+删除远程仓库：$ git remote rm [name]
+修改远程仓库：$ git remote <span class="built_in">set</span>-url --push [name] [newUrl]
+拉取远程仓库：$ git pull [remoteName] [<span class="built_in">local</span>BranchName]
+推送远程仓库：$ git push [remoteName] [<span class="built_in">local</span>BranchName]
+*如果想把本地的某个分支<span class="built_in">test</span>提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫<span class="built_in">test</span>的分支，如下：
+<span class="variable">$git</span> push origin <span class="built_in">test</span>:master         // 提交本地<span class="built_in">test</span>分支作为远程的master分支
+<span class="variable">$git</span> push origin <span class="built_in">test</span>:<span class="built_in">test</span>           // 提交本地<span class="built_in">test</span>分支作为远程的<span class="built_in">test</span>分支
+</code></pre><h3 id="4-_分支(branch)操作相关命令">4. 分支(branch)操作相关命令</h3><pre><code>查看本地分支：<span class="variable">$ </span>git branch
+查看远程分支：<span class="variable">$ </span>git branch -r
+创建本地分支：<span class="variable">$ </span>git branch [name] ----注意新分支创建后不会自动切换为当前分支
+切换分支：<span class="variable">$ </span>git checkout [name]
+创建新分支并立即切换到新分支：<span class="variable">$ </span>git checkout -b [name]
+删除分支：<span class="variable">$ </span>git branch -d [name] ---- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-<span class="constant">D选</span>项
+合并分支：<span class="variable">$ </span>git merge [name] ----将名称为[name]的分支与当前分支合并
+创建远程分支(本地分支push到远程)：<span class="variable">$ </span>git push origin [name]
+删除远程分支：<span class="variable">$ </span>git push origin <span class="symbol">:heads/</span>[name] 或 <span class="variable">$ </span>gitpush origin <span class="symbol">:</span>[name]
+*创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)
+<span class="variable">$git</span> symbolic-ref <span class="constant">HEAD </span>refs/heads/[name]
+<span class="variable">$rm</span> .git/index
+<span class="variable">$git</span> clean -fdx
+</code></pre><h3 id="5-_版本(tag)操作相关命令">5. 版本(tag)操作相关命令</h3><pre><code>查看版本：$ git <span class="keyword">tag</span>
+<span class="title">创建版本：$</span> git <span class="keyword">tag</span> <span class="title">[name</span>]
+删除版本：$ git <span class="keyword">tag</span> <span class="title">-d</span> [name]
+查看远程版本：$ git <span class="keyword">tag</span> <span class="title">-r</span>
+创建远程版本(本地版本push到远程)：$ git push origin [name]
+删除远程版本：$ git push origin :refs/tags/[name]
+合并远程仓库的<span class="operator">tag</span>到本地：$ git pull origin --tags
+上传本地<span class="operator">tag</span>到远程仓库：$ git push origin --tags
+创建带注释的<span class="operator">tag</span>：$ git <span class="keyword">tag</span> <span class="title">-a</span> [name] -m 'yourMessage'
+</code></pre><h3 id="6-_子模块(submodule)相关操作命令">6. 子模块(submodule)相关操作命令</h3><pre><code>添加子模块：<span class="variable">$ </span>git submodule add [url] [path]
+   如：<span class="variable">$git</span> submodule add <span class="symbol">git:</span>/<span class="regexp">/github.com/soberh</span><span class="regexp">/ui-libs.git src/main</span><span class="regexp">/webapp/ui</span>-libs
+初始化子模块：<span class="variable">$ </span>git submodule init  ----只在首次检出仓库时运行一次就行
+更新子模块：<span class="variable">$ </span>git submodule update ----每次更新或切换分支后都需要运行一下
+删除子模块：（分<span class="number">4</span>步走哦）
+<span class="number">1</span>) <span class="variable">$ </span>git rm --cached [path]
+<span class="number">2</span>) 编辑“.gitmodules”文件，将子模块的相关配置节点删除掉
+<span class="number">3</span>) 编辑“ .git/config”文件，将子模块的相关配置节点删除掉
+<span class="number">4</span>) 手动删除子模块残留的目录
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1-_初始化一个项目">1. 初始化一个项目</h3><pre><code><span class="keyword">mkdir</span> <span class="keyword">App</span>
+<span class="keyword">cd</span> <span class="keyword">App</span>
+git init
+touch README
+git add README
+git commit -<span class="keyword">m</span> 'first commit'
+git remote add origin git@github.com:orangecoder/<span class="keyword">App</span>.git
+git push -<span class="keyword">u</span> origin master
+</code></pre><h3 id="2-_让gitignore文件生效命令">2. 让gitignore文件生效命令</h3><pre><code>git rm -r <span class="comment">--cached .</span>
+</code></pre>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Android 开发总结]]></title>
+    <link href="http://orangecoder.github.io/2015/10/22/Android-%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"/>
+    <id>http://orangecoder.github.io/2015/10/22/Android-开发总结/</id>
+    <published>2015-10-22T15:14:32.000Z</published>
+    <updated>2015-11-17T06:53:33.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="1-_Android中的Service全面总结">1. <a href="http://www.cnblogs.com/newcj/archive/2011/05/30/2061370.html" target="_blank" rel="external">Android中的Service全面总结</a></h3><ul>
+<li>Service的种类</li>
+<li>Service 与 Thread 的区别</li>
+<li>Service的生命周期</li>
+<li>startService 启动服务</li>
+<li>Local 与 Remote 服务绑定</li>
+<li>创建前台服务</li>
+<li>在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService</li>
+<li>在 AndroidManifest.xml 里 Service 元素的常见选项</li>
+</ul>
+<a id="more"></a>
+<h3 id="2-_Android中BroadCastReceiver使用">2. <a href="http://www.cnblogs.com/jico/articles/1838293.html" target="_blank" rel="external">Android中BroadCastReceiver使用</a></h3><ul>
+<li>静态注册</li>
+<li>动态注册</li>
+</ul>
+<h3 id="3-_Android中的几种多线程实现">3. <a href="http://blog.sina.com.cn/s/blog_74e9d98d0101g9iw.html" target="_blank" rel="external">Android中的几种多线程实现 </a></h3><ul>
+<li>Activity.runOnUiThread(Runnable)</li>
+<li>View.post(Runnable)</li>
+<li>Handler</li>
+<li>AsyncTask</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1-_Android中的Service全面总结">1. <a href="http://www.cnblogs.com/newcj/archive/2011/05/30/2061370.html">Android中的Service全面总结</a></h3><ul>
+<li>Service的种类</li>
+<li>Service 与 Thread 的区别</li>
+<li>Service的生命周期</li>
+<li>startService 启动服务</li>
+<li>Local 与 Remote 服务绑定</li>
+<li>创建前台服务</li>
+<li>在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService</li>
+<li>在 AndroidManifest.xml 里 Service 元素的常见选项</li>
+</ul>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[解决Mac下无法识别Android手机的问题]]></title>
+    <link href="http://orangecoder.github.io/2015/10/15/%E8%A7%A3%E5%86%B3Mac%E4%B8%8B%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%ABAndroid%E6%89%8B%E6%9C%BA%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://orangecoder.github.io/2015/10/15/解决Mac下无法识别Android手机的问题/</id>
+    <published>2015-10-14T16:26:38.000Z</published>
+    <updated>2015-11-17T06:53:33.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="1-_插入手机，打开命令行终端，输入以下命令">1. 插入手机，打开命令行终端，输入以下命令</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system_profiler SPUSBDataType</span><br></pre></td></tr></table></figure>
+<p>得到以下结果<br><img src="/image/解决Mac下无法识别Android手机的问题-1.png" alt=""></p>
+<a id="more"></a>
+<h3 id="2-_如果没有得到上面_Vendor_ID_，拔出手机，重复以上动作">2. 如果没有得到上面 Vendor ID ，拔出手机，重复以上动作</h3><h3 id="3-_在命令行终端输入下面命令_（0x2a45_根据你的_Vendor_ID_值来替换）">3. 在命令行终端输入下面命令 （0x2a45 根据你的 Vendor ID 值来替换）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#34;0x2a45&#34; &#62; ~/.android/adb_usb.ini</span><br></pre></td></tr></table></figure>
+<h3 id="4-_重启adb后就可以了">4. 重启adb后就可以了</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb kill-server</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1-_插入手机，打开命令行终端，输入以下命令">1. 插入手机，打开命令行终端，输入以下命令</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system_profiler SPUSBDataType</span><br></pre></td></tr></table></figure>
+<p>得到以下结果<br><img src="/image/解决Mac下无法识别Android手机的问题-1.png" alt=""></p>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[翻墙攻略]]></title>
+    <link href="http://orangecoder.github.io/2015/10/14/vpn/"/>
+    <id>http://orangecoder.github.io/2015/10/14/vpn/</id>
+    <published>2015-10-14T15:16:53.000Z</published>
+    <updated>2015-11-17T06:53:33.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="1-_云梯">1. <a href="http://tizipro.com/?r=2171b4d1cdbd6d00" target="_blank" rel="external">云梯</a></h1><p>最大的特点是便宜，最低15元一个月，支持全平台（Windows，Ubuntu，Mac，iphone，Android），<br>支持服务器遍布（日本，美国，新加坡，香港，台湾，英国），相对齐全，<br>满足一般上网查资料需求，不支持大文件下载，属于比较基础的梯子<br>通过我上面的链接购买可以便宜10元</p>
+<a id="more"></a>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="1-_云梯">1. <a href="http://tizipro.com/?r=2171b4d1cdbd6d00">云梯</a></h1><p>最大的特点是便宜，最低15元一个月，支持全平台（Windows，Ubuntu，Mac，iphone，Android），<br>支持服务器遍布（日本，美国，新加坡，香港，台湾，英国），相对齐全，<br>满足一般上网查资料需求，不支持大文件下载，属于比较基础的梯子<br>通过我上面的链接购买可以便宜10元</p>]]>
+    
+    </summary>
+    
+  </entry>
+  
+</feed>
