@@ -114,6 +114,171 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-iterm2-zsh" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/28/iterm2-zsh/" class="article-date">
+  	<time datetime="2016-01-28T03:01:30.000Z" itemprop="datePublished">2016-01-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/28/iterm2-zsh/">mac下iterm2和zsh配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先看张最终的效果图<br><img src="/image/iterm2-zsh-1.png" alt=""></p>
+<h3 id="1-下载安装iterm2">1.下载安装iterm2</h3><ul>
+<li>下载安装iterm2 <a href="http://www.iterm2.com" target="_blank" rel="external">下载链接</a></li>
+<li>将bash切换到zsh<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-下载安装oh-my-zsh">2.下载安装oh-my-zsh</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh</span><br></pre></td></tr></table></figure>
+<h3 id="3-下载安装Powerline">3.下载安装Powerline</h3><p>powerline是一款非常好用的代码提示状态栏，<a href="http://powerline.readthedocs.org/en/latest/index.html" target="_blank" rel="external">官网地址</a><br>如果你的终端能够正常执行pip指令，那么直接执行下面的指令可以完成安装<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install powerline-status</span><br></pre></td></tr></table></figure></p>
+<p>如果没有，则先执行安装pip指令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install pip</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-设置iterm2的Regular_Font_和_Non-ASCII_Font">4.设置iterm2的Regular Font 和 Non-ASCII Font</h3><ul>
+<li><p>下载powerline字体库 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/powerline/fonts.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cd到install.sh文件所在目录,执行./install.sh指令安装所有Powerline字体</p>
+</li>
+<li>把iTerm 2的设置里的Profile中的Text 选项卡中里的Regular Font和Non-ASCII Font的字体都设置成 Powerline的字体，我这里设置的字体是12pt Meslo LG S DZ Regular for Powerline<br><img src="image/iterm2-zsh-2.png" alt=""></li>
+</ul>
+<h3 id="5-设置iterm2的配色方案">5.设置iterm2的配色方案</h3><ul>
+<li><p>下载solarized </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/altercation/solarized.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入刚刚下载的工程的solarized/iterm2-colors-solarized 下双击 Solarized Dark.itermcolors 和 Solarized Light.itermcolors 两个文件就可以把配置文件导入到 iTerm2 里</p>
+</li>
+<li>iterm2配置刚安装的配色主题<br><img src="image/iterm2-zsh-3.png" alt=""></li>
+</ul>
+<h3 id="6-设置iterm2的主题为agnoster">6.设置iterm2的主题为agnoster</h3><ul>
+<li><p>下载agnoster </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/fcamblor/oh-my-zsh-agnoster-fcamblor.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入刚刚下载的工程里面运行install文件,主题将安装到~/.oh-my-zsh/themes目录下</p>
+</li>
+<li>打开~/.zshrc文件，然后将ZSH_THEME后面的字段改为agnoster。ZSH_THEME=”agnoster”（agnoster即为要设置的主题）</li>
+</ul>
+<h3 id="7-增加指令高亮效果">7.增加指令高亮效果</h3><p>指令高亮效果作用是当用户输入正确命令时指令会绿色高亮，错误时命令红色高亮</p>
+<ul>
+<li><p>切换到.zshrc所在目录</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载zsh-syntax-highlighting </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git://github.com/zsh-users/zsh-syntax-highlighting.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开.zshrc文件，在最后添加下面内容</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&#10;plugins=(zsh-syntax-highlighting)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-brew-install-mysql-on-mac-os" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/22/brew-install-mysql-on-mac-os/" class="article-date">
+  	<time datetime="2015-11-22T05:15:29.000Z" itemprop="datePublished">2015-11-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/22/brew-install-mysql-on-mac-os/">brew install mysql on mac os</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-_安装">1. 安装</h3><pre><code>$ <span class="keyword">brew </span>install mysql
+</code></pre><h3 id="2-_设置MySQL数据存放地址">2. 设置MySQL数据存放地址</h3><pre><code>$ <span class="keyword">vi</span> /etc/my.<span class="keyword">cnf</span>
+</code></pre><p>输入以下内容：<br>    [mysqld]<br>    datadir=/usr/local/var/mysql<br>    plugin_dir=/usr/local/Cellar/mysql/5.7.9/lib<br>    basedir=/usr/local/Cellar/mysql/5.7.9<br>    pid-file=/usr/local/var/mysql/xpMac.local.pid<br>    log-error=/usr/local/var/mysql/xpMac.local.err</p>
+<h3 id="3-_修改root密码">3. 修改root密码</h3><pre><code>$ ps -ef|grep mysqld    (查看所有mysqld进程)
+$ <span class="operator"><span class="keyword">kill</span> -<span class="number">9</span> <span class="number">123</span>    (关闭所有mysqld进程，<span class="number">123</span>为进程<span class="keyword">id</span>)
+$ mysqld_safe <span class="comment">--skip-grant-tables</span>
+$ mysql -uroot
+$ <span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> authentication_string=<span class="keyword">password</span>(<span class="string">'1111'</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root’;</span></span>
+</code></pre><h3 id="4-_让MySQL开机自启动">4. 让MySQL开机自启动</h3><pre><code><span class="variable">$ </span>mkdir -p ~<span class="regexp">/Library/</span><span class="constant">LaunchAgents</span>
+<span class="variable">$ </span>ln -sfv /usr/local/opt/mysql/*.plist ~<span class="regexp">/Library/</span><span class="constant">LaunchAgents</span>
+<span class="variable">$ </span>find /usr/local/<span class="constant">Cellar/</span>mysql/ -name <span class="string">"homebrew.mxcl.mysql.plist"</span> -exec cp {} ~<span class="regexp">/Library/</span><span class="constant">LaunchAgents/</span> \;
+<span class="variable">$ </span>launchctl load -w ~<span class="regexp">/Library/</span><span class="constant">LaunchAgents/</span>homebrew.mxcl.mysql.plist
+</code></pre><h3 id="5-_登陆MySQL客户端">5. 登陆MySQL客户端</h3><pre><code>$ mysql -uroot -<span class="tag">p</span> 
+输入刚才设置的密码就可以了
+</code></pre><h3 id="6-_安装MySQL_Workbench，一款专为MySQL设计的ER/数据库建模工具">6. 安装MySQL Workbench，一款专为MySQL设计的ER/数据库建模工具</h3><pre><code>下载地址：<span class="symbol">http:</span>/<span class="regexp">/dev.mysql.com/downloads</span><span class="regexp">/workbench/</span>
+</code></pre><h3 id="参考">参考</h3><ul>
+<li><a href="http://stackoverflow.com/questions/4359131/brew-install-mysql-on-mac-os" target="_blank" rel="external">http://stackoverflow.com/questions/4359131/brew-install-mysql-on-mac-os</a></li>
+<li><a href="http://stackoverflow.com/questions/30692812/mysql-user-db-does-not-have-password-columns-installing-mysql-on-osx/31122246#31122246" target="_blank" rel="external">http://stackoverflow.com/questions/30692812/mysql-user-db-does-not-have-password-columns-installing-mysql-on-osx/31122246#31122246</a> </li>
+<li><a href="http://blog.neten.de/posts/2014/01/27/install-mysql-using-homebrew/" target="_blank" rel="external">http://blog.neten.de/posts/2014/01/27/install-mysql-using-homebrew/</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-git-常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -149,7 +314,48 @@ git commit -<span class="keyword">m</span> 'first commit'
 git remote add origin git@github.com:orangecoder/<span class="keyword">App</span>.git
 git push -<span class="keyword">u</span> origin master
 </code></pre><h3 id="2-_让gitignore文件生效命令">2. 让gitignore文件生效命令</h3><pre><code>git rm -r <span class="comment">--cached .</span>
-</code></pre>
+</code></pre><h3 id="3-_远程仓库相关命令">3. 远程仓库相关命令</h3><pre><code>检出仓库：$ git <span class="built_in">clone</span> git://github.com/jquery/jquery.git
+查看远程仓库：$ git remote -v
+添加远程仓库：$ git remote add [name] [url]
+删除远程仓库：$ git remote rm [name]
+修改远程仓库：$ git remote <span class="built_in">set</span>-url --push [name] [newUrl]
+拉取远程仓库：$ git pull [remoteName] [<span class="built_in">local</span>BranchName]
+推送远程仓库：$ git push [remoteName] [<span class="built_in">local</span>BranchName]
+*如果想把本地的某个分支<span class="built_in">test</span>提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫<span class="built_in">test</span>的分支，如下：
+<span class="variable">$git</span> push origin <span class="built_in">test</span>:master         // 提交本地<span class="built_in">test</span>分支作为远程的master分支
+<span class="variable">$git</span> push origin <span class="built_in">test</span>:<span class="built_in">test</span>           // 提交本地<span class="built_in">test</span>分支作为远程的<span class="built_in">test</span>分支
+</code></pre><h3 id="4-_分支(branch)操作相关命令">4. 分支(branch)操作相关命令</h3><pre><code>查看本地分支：<span class="variable">$ </span>git branch
+查看远程分支：<span class="variable">$ </span>git branch -r
+创建本地分支：<span class="variable">$ </span>git branch [name] ----注意新分支创建后不会自动切换为当前分支
+切换分支：<span class="variable">$ </span>git checkout [name]
+创建新分支并立即切换到新分支：<span class="variable">$ </span>git checkout -b [name]
+删除分支：<span class="variable">$ </span>git branch -d [name] ---- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-<span class="constant">D选</span>项
+合并分支：<span class="variable">$ </span>git merge [name] ----将名称为[name]的分支与当前分支合并
+创建远程分支(本地分支push到远程)：<span class="variable">$ </span>git push origin [name]
+删除远程分支：<span class="variable">$ </span>git push origin <span class="symbol">:heads/</span>[name] 或 <span class="variable">$ </span>gitpush origin <span class="symbol">:</span>[name]
+*创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)
+<span class="variable">$git</span> symbolic-ref <span class="constant">HEAD </span>refs/heads/[name]
+<span class="variable">$rm</span> .git/index
+<span class="variable">$git</span> clean -fdx
+</code></pre><h3 id="5-_版本(tag)操作相关命令">5. 版本(tag)操作相关命令</h3><pre><code>查看版本：$ git <span class="keyword">tag</span>
+<span class="title">创建版本：$</span> git <span class="keyword">tag</span> <span class="title">[name</span>]
+删除版本：$ git <span class="keyword">tag</span> <span class="title">-d</span> [name]
+查看远程版本：$ git <span class="keyword">tag</span> <span class="title">-r</span>
+创建远程版本(本地版本push到远程)：$ git push origin [name]
+删除远程版本：$ git push origin :refs/tags/[name]
+合并远程仓库的<span class="operator">tag</span>到本地：$ git pull origin --tags
+上传本地<span class="operator">tag</span>到远程仓库：$ git push origin --tags
+创建带注释的<span class="operator">tag</span>：$ git <span class="keyword">tag</span> <span class="title">-a</span> [name] -m 'yourMessage'
+</code></pre><h3 id="6-_子模块(submodule)相关操作命令">6. 子模块(submodule)相关操作命令</h3><pre><code>添加子模块：<span class="variable">$ </span>git submodule add [url] [path]
+   如：<span class="variable">$git</span> submodule add <span class="symbol">git:</span>/<span class="regexp">/github.com/soberh</span><span class="regexp">/ui-libs.git src/main</span><span class="regexp">/webapp/ui</span>-libs
+初始化子模块：<span class="variable">$ </span>git submodule init  ----只在首次检出仓库时运行一次就行
+更新子模块：<span class="variable">$ </span>git submodule update ----每次更新或切换分支后都需要运行一下
+删除子模块：（分<span class="number">4</span>步走哦）
+<span class="number">1</span>) <span class="variable">$ </span>git rm --cached [path]
+<span class="number">2</span>) 编辑“.gitmodules”文件，将子模块的相关配置节点删除掉
+<span class="number">3</span>) 编辑“ .git/config”文件，将子模块的相关配置节点删除掉
+<span class="number">4</span>) 手动删除子模块残留的目录
+</code></pre><h3 id="7-_git乱码解决方案汇总">7. <a href="https://gist.github.com/vkyii/1079783" target="_blank" rel="external">git乱码解决方案汇总</a></h3>
       
     </div>
     
@@ -158,10 +364,6 @@ git push -<span class="keyword">u</span> origin master
       
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/10/23/git-常用命令/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -203,7 +405,7 @@ git push -<span class="keyword">u</span> origin master
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-_Android中的Service全面总结">1. <a href="http://www.cnblogs.com/newcj/archive/2011/05/30/2061370.html">Android中的Service全面总结</a></h3><ul>
+        <h3 id="1-_Android中的Service全面总结">1. <a href="http://www.cnblogs.com/newcj/archive/2011/05/30/2061370.html" target="_blank" rel="external">Android中的Service全面总结</a></h3><ul>
 <li>Service的种类</li>
 <li>Service 与 Thread 的区别</li>
 <li>Service的生命周期</li>
@@ -213,6 +415,17 @@ git push -<span class="keyword">u</span> origin master
 <li>在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService</li>
 <li>在 AndroidManifest.xml 里 Service 元素的常见选项</li>
 </ul>
+<h3 id="2-_Android中BroadCastReceiver使用">2. <a href="http://www.cnblogs.com/jico/articles/1838293.html" target="_blank" rel="external">Android中BroadCastReceiver使用</a></h3><ul>
+<li>静态注册</li>
+<li>动态注册</li>
+</ul>
+<h3 id="3-_Android中的几种多线程实现">3. <a href="http://blog.sina.com.cn/s/blog_74e9d98d0101g9iw.html" target="_blank" rel="external">Android中的几种多线程实现 </a></h3><ul>
+<li>Activity.runOnUiThread(Runnable)</li>
+<li>View.post(Runnable)</li>
+<li>Handler</li>
+<li>AsyncTask</li>
+</ul>
+
       
     </div>
     
@@ -221,10 +434,6 @@ git push -<span class="keyword">u</span> origin master
       
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/10/22/Android-开发总结/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -268,6 +477,8 @@ git push -<span class="keyword">u</span> origin master
       
         <h3 id="1-_插入手机，打开命令行终端，输入以下命令">1. 插入手机，打开命令行终端，输入以下命令</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system_profiler SPUSBDataType</span><br></pre></td></tr></table></figure>
 <p>得到以下结果<br><img src="/image/解决Mac下无法识别Android手机的问题-1.png" alt=""></p>
+<h3 id="2-_如果没有得到上面_Vendor_ID_，拔出手机，重复以上动作">2. 如果没有得到上面 Vendor ID ，拔出手机，重复以上动作</h3><h3 id="3-_在命令行终端输入下面命令_（0x2a45_根据你的_Vendor_ID_值来替换）">3. 在命令行终端输入下面命令 （0x2a45 根据你的 Vendor ID 值来替换）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#34;0x2a45&#34; &#62; ~/.android/adb_usb.ini</span><br></pre></td></tr></table></figure>
+<h3 id="4-_重启adb后就可以了">4. 重启adb后就可以了</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb kill-server</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -276,10 +487,6 @@ git push -<span class="keyword">u</span> origin master
       
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/10/15/解决Mac下无法识别Android手机的问题/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -295,67 +502,17 @@ git push -<span class="keyword">u</span> origin master
 
 
   
-    <article id="post-vpn" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2015/10/14/vpn/" class="article-date">
-  	<time datetime="2015-10-14T15:16:53.000Z" itemprop="datePublished">2015-10-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/14/vpn/">翻墙攻略</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-_云梯">1. <a href="http://tizipro.com/?r=2171b4d1cdbd6d00">云梯</a></h1><p>最大的特点是便宜，最低15元一个月，支持全平台（Windows，Ubuntu，Mac，iphone，Android），<br>支持服务器遍布（日本，美国，新加坡，香港，台湾，英国），相对齐全，<br>满足一般上网查资料需求，不支持大文件下载，属于比较基础的梯子<br>通过我上面的链接购买可以便宜10元</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/10/14/vpn/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 李晓平
+    		&copy; 2016 李晓平
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

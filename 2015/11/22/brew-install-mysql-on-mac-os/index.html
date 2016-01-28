@@ -3,42 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Android 开发总结 | orangecoder</title>
+  <title>brew install mysql on mac os | orangecoder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. Android中的Service全面总结
-Service的种类
-Service 与 Thread 的区别
-Service的生命周期
-startService 启动服务
-Local 与 Remote 服务绑定
-创建前台服务
-在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService
-在 AndroidManifest">
+  <meta name="description" content="1. 安装$ brew install mysql
+2. 设置MySQL数据存放地址$ vi /etc/my.cnf
+输入以下内容：    [mysqld]    datadir=/usr/local/var/mysql    plugin_dir=/usr/local/Cellar/mysql/5.7.9/lib    basedir=/usr/local/Cellar/mysql/5.7.9">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 开发总结">
-<meta property="og:url" content="http://orangecoder.github.io/2015/10/22/Android-开发总结/index.html">
+<meta property="og:title" content="brew install mysql on mac os">
+<meta property="og:url" content="http://orangecoder.github.io/2015/11/22/brew-install-mysql-on-mac-os/index.html">
 <meta property="og:site_name" content="orangecoder">
-<meta property="og:description" content="1. Android中的Service全面总结
-Service的种类
-Service 与 Thread 的区别
-Service的生命周期
-startService 启动服务
-Local 与 Remote 服务绑定
-创建前台服务
-在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService
-在 AndroidManifest">
+<meta property="og:description" content="1. 安装$ brew install mysql
+2. 设置MySQL数据存放地址$ vi /etc/my.cnf
+输入以下内容：    [mysqld]    datadir=/usr/local/var/mysql    plugin_dir=/usr/local/Cellar/mysql/5.7.9/lib    basedir=/usr/local/Cellar/mysql/5.7.9">
 <meta property="og:updated_time" content="2016-01-28T02:31:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 开发总结">
-<meta name="twitter:description" content="1. Android中的Service全面总结
-Service的种类
-Service 与 Thread 的区别
-Service的生命周期
-startService 启动服务
-Local 与 Remote 服务绑定
-创建前台服务
-在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService
-在 AndroidManifest">
+<meta name="twitter:title" content="brew install mysql on mac os">
+<meta name="twitter:description" content="1. 安装$ brew install mysql
+2. 设置MySQL数据存放地址$ vi /etc/my.cnf
+输入以下内容：    [mysqld]    datadir=/usr/local/var/mysql    plugin_dir=/usr/local/Cellar/mysql/5.7.9/lib    basedir=/usr/local/Cellar/mysql/5.7.9">
   
     <link rel="alternative" href="/atom.xml" title="orangecoder" type="application/atom+xml">
   
@@ -137,11 +119,11 @@ Local 与 Remote 服务绑定
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Android-开发总结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-brew-install-mysql-on-mac-os" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/22/Android-开发总结/" class="article-date">
-  	<time datetime="2015-10-22T15:14:32.000Z" itemprop="datePublished">2015-10-22</time>
+      <a href="/2015/11/22/brew-install-mysql-on-mac-os/" class="article-date">
+  	<time datetime="2015-11-22T05:15:29.000Z" itemprop="datePublished">2015-11-22</time>
 </a>
     </div>
   
@@ -154,7 +136,7 @@ Local 与 Remote 服务绑定
         
   
     <h1 class="article-title" itemprop="name">
-      Android 开发总结
+      brew install mysql on mac os
     </h1>
   
 
@@ -170,25 +152,25 @@ Local 与 Remote 服务绑定
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-_Android中的Service全面总结">1. <a href="http://www.cnblogs.com/newcj/archive/2011/05/30/2061370.html" target="_blank" rel="external">Android中的Service全面总结</a></h3><ul>
-<li>Service的种类</li>
-<li>Service 与 Thread 的区别</li>
-<li>Service的生命周期</li>
-<li>startService 启动服务</li>
-<li>Local 与 Remote 服务绑定</li>
-<li>创建前台服务</li>
-<li>在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService</li>
-<li>在 AndroidManifest.xml 里 Service 元素的常见选项</li>
-</ul>
-<h3 id="2-_Android中BroadCastReceiver使用">2. <a href="http://www.cnblogs.com/jico/articles/1838293.html" target="_blank" rel="external">Android中BroadCastReceiver使用</a></h3><ul>
-<li>静态注册</li>
-<li>动态注册</li>
-</ul>
-<h3 id="3-_Android中的几种多线程实现">3. <a href="http://blog.sina.com.cn/s/blog_74e9d98d0101g9iw.html" target="_blank" rel="external">Android中的几种多线程实现 </a></h3><ul>
-<li>Activity.runOnUiThread(Runnable)</li>
-<li>View.post(Runnable)</li>
-<li>Handler</li>
-<li>AsyncTask</li>
+        <h3 id="1-_安装">1. 安装</h3><pre><code>$ <span class="keyword">brew </span>install mysql
+</code></pre><h3 id="2-_设置MySQL数据存放地址">2. 设置MySQL数据存放地址</h3><pre><code>$ <span class="keyword">vi</span> /etc/my.<span class="keyword">cnf</span>
+</code></pre><p>输入以下内容：<br>    [mysqld]<br>    datadir=/usr/local/var/mysql<br>    plugin_dir=/usr/local/Cellar/mysql/5.7.9/lib<br>    basedir=/usr/local/Cellar/mysql/5.7.9<br>    pid-file=/usr/local/var/mysql/xpMac.local.pid<br>    log-error=/usr/local/var/mysql/xpMac.local.err</p>
+<h3 id="3-_修改root密码">3. 修改root密码</h3><pre><code>$ ps -ef|grep mysqld    (查看所有mysqld进程)
+$ <span class="operator"><span class="keyword">kill</span> -<span class="number">9</span> <span class="number">123</span>    (关闭所有mysqld进程，<span class="number">123</span>为进程<span class="keyword">id</span>)
+$ mysqld_safe <span class="comment">--skip-grant-tables</span>
+$ mysql -uroot
+$ <span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> authentication_string=<span class="keyword">password</span>(<span class="string">'1111'</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root’;</span></span>
+</code></pre><h3 id="4-_让MySQL开机自启动">4. 让MySQL开机自启动</h3><pre><code><span class="variable">$ </span>mkdir -p ~<span class="regexp">/Library/</span><span class="constant">LaunchAgents</span>
+<span class="variable">$ </span>ln -sfv /usr/local/opt/mysql/*.plist ~<span class="regexp">/Library/</span><span class="constant">LaunchAgents</span>
+<span class="variable">$ </span>find /usr/local/<span class="constant">Cellar/</span>mysql/ -name <span class="string">"homebrew.mxcl.mysql.plist"</span> -exec cp {} ~<span class="regexp">/Library/</span><span class="constant">LaunchAgents/</span> \;
+<span class="variable">$ </span>launchctl load -w ~<span class="regexp">/Library/</span><span class="constant">LaunchAgents/</span>homebrew.mxcl.mysql.plist
+</code></pre><h3 id="5-_登陆MySQL客户端">5. 登陆MySQL客户端</h3><pre><code>$ mysql -uroot -<span class="tag">p</span> 
+输入刚才设置的密码就可以了
+</code></pre><h3 id="6-_安装MySQL_Workbench，一款专为MySQL设计的ER/数据库建模工具">6. 安装MySQL Workbench，一款专为MySQL设计的ER/数据库建模工具</h3><pre><code>下载地址：<span class="symbol">http:</span>/<span class="regexp">/dev.mysql.com/downloads</span><span class="regexp">/workbench/</span>
+</code></pre><h3 id="参考">参考</h3><ul>
+<li><a href="http://stackoverflow.com/questions/4359131/brew-install-mysql-on-mac-os" target="_blank" rel="external">http://stackoverflow.com/questions/4359131/brew-install-mysql-on-mac-os</a></li>
+<li><a href="http://stackoverflow.com/questions/30692812/mysql-user-db-does-not-have-password-columns-installing-mysql-on-osx/31122246#31122246" target="_blank" rel="external">http://stackoverflow.com/questions/30692812/mysql-user-db-does-not-have-password-columns-installing-mysql-on-osx/31122246#31122246</a> </li>
+<li><a href="http://blog.neten.de/posts/2014/01/27/install-mysql-using-homebrew/" target="_blank" rel="external">http://blog.neten.de/posts/2014/01/27/install-mysql-using-homebrew/</a></li>
 </ul>
 
       
@@ -199,18 +181,18 @@ Local 与 Remote 服务绑定
     
 <nav id="article-nav">
   
-    <a href="/2015/10/23/git-常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/28/iterm2-zsh/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          git 常用命令
+          mac下iterm2和zsh配置
         
       </div>
     </a>
   
   
-    <a href="/2015/10/15/解决Mac下无法识别Android手机的问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">解决Mac下无法识别Android手机的问题</div>
+    <a href="/2015/10/23/git-常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git 常用命令</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

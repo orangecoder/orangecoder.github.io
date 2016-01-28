@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mac下iterm2和zsh配置 | orangecoder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首先看张最终的效果图
+1.下载安装iterm2
+下载安装iterm2 下载链接
+将bash切换到zsh1chsh -s /bin/zsh
+
+
+2.下载安装oh-my-zsh1curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+3.下载安装Powerlinepowerline是一款非常好">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac下iterm2和zsh配置">
+<meta property="og:url" content="http://orangecoder.github.io/2016/01/28/iterm2-zsh/index.html">
+<meta property="og:site_name" content="orangecoder">
+<meta property="og:description" content="首先看张最终的效果图
+1.下载安装iterm2
+下载安装iterm2 下载链接
+将bash切换到zsh1chsh -s /bin/zsh
+
+
+2.下载安装oh-my-zsh1curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+3.下载安装Powerlinepowerline是一款非常好">
+<meta property="og:image" content="http://orangecoder.github.io/image/iterm2-zsh-1.png">
+<meta property="og:image" content="http://orangecoder.github.io/image/iterm2-zsh-2.png">
+<meta property="og:image" content="http://orangecoder.github.io/image/iterm2-zsh-3.png">
+<meta property="og:updated_time" content="2016-01-28T05:07:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mac下iterm2和zsh配置">
+<meta name="twitter:description" content="首先看张最终的效果图
+1.下载安装iterm2
+下载安装iterm2 下载链接
+将bash切换到zsh1chsh -s /bin/zsh
+
+
+2.下载安装oh-my-zsh1curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+3.下载安装Powerlinepowerline是一款非常好">
+  
+    <link rel="alternative" href="/atom.xml" title="orangecoder" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">李晓平</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">android ffmpeg nodejs</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/orangecoder" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">李晓平</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="null" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">李晓平</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">android ffmpeg nodejs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/orangecoder" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-iterm2-zsh" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/28/iterm2-zsh/" class="article-date">
+  	<time datetime="2016-01-28T03:01:30.000Z" itemprop="datePublished">2016-01-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mac下iterm2和zsh配置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先看张最终的效果图<br><img src="/image/iterm2-zsh-1.png" alt=""></p>
+<h3 id="1-下载安装iterm2">1.下载安装iterm2</h3><ul>
+<li>下载安装iterm2 <a href="http://www.iterm2.com" target="_blank" rel="external">下载链接</a></li>
+<li>将bash切换到zsh<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-下载安装oh-my-zsh">2.下载安装oh-my-zsh</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh</span><br></pre></td></tr></table></figure>
+<h3 id="3-下载安装Powerline">3.下载安装Powerline</h3><p>powerline是一款非常好用的代码提示状态栏，<a href="http://powerline.readthedocs.org/en/latest/index.html" target="_blank" rel="external">官网地址</a><br>如果你的终端能够正常执行pip指令，那么直接执行下面的指令可以完成安装<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install powerline-status</span><br></pre></td></tr></table></figure></p>
+<p>如果没有，则先执行安装pip指令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install pip</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-设置iterm2的Regular_Font_和_Non-ASCII_Font">4.设置iterm2的Regular Font 和 Non-ASCII Font</h3><ul>
+<li><p>下载powerline字体库 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/powerline/fonts.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cd到install.sh文件所在目录,执行./install.sh指令安装所有Powerline字体</p>
+</li>
+<li>把iTerm 2的设置里的Profile中的Text 选项卡中里的Regular Font和Non-ASCII Font的字体都设置成 Powerline的字体，我这里设置的字体是12pt Meslo LG S DZ Regular for Powerline<br><img src="image/iterm2-zsh-2.png" alt=""></li>
+</ul>
+<h3 id="5-设置iterm2的配色方案">5.设置iterm2的配色方案</h3><ul>
+<li><p>下载solarized </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/altercation/solarized.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入刚刚下载的工程的solarized/iterm2-colors-solarized 下双击 Solarized Dark.itermcolors 和 Solarized Light.itermcolors 两个文件就可以把配置文件导入到 iTerm2 里</p>
+</li>
+<li>iterm2配置刚安装的配色主题<br><img src="image/iterm2-zsh-3.png" alt=""></li>
+</ul>
+<h3 id="6-设置iterm2的主题为agnoster">6.设置iterm2的主题为agnoster</h3><ul>
+<li><p>下载agnoster </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/fcamblor/oh-my-zsh-agnoster-fcamblor.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入刚刚下载的工程里面运行install文件,主题将安装到~/.oh-my-zsh/themes目录下</p>
+</li>
+<li>打开~/.zshrc文件，然后将ZSH_THEME后面的字段改为agnoster。ZSH_THEME=”agnoster”（agnoster即为要设置的主题）</li>
+</ul>
+<h3 id="7-增加指令高亮效果">7.增加指令高亮效果</h3><p>指令高亮效果作用是当用户输入正确命令时指令会绿色高亮，错误时命令红色高亮</p>
+<ul>
+<li><p>切换到.zshrc所在目录</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载zsh-syntax-highlighting </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git://github.com/zsh-users/zsh-syntax-highlighting.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开.zshrc文件，在最后添加下面内容</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&#10;plugins=(zsh-syntax-highlighting)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/22/brew-install-mysql-on-mac-os/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">brew install mysql on mac os</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 李晓平
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
