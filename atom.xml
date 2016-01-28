@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[orangecoder]]></title>
-  <subtitle><![CDATA[android ffmpeg nodejs]]></subtitle>
+  <subtitle><![CDATA[android ffmpeg nodejs gradle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://orangecoder.github.io/"/>
-  <updated>2016-01-28T05:07:56.000Z</updated>
+  <updated>2016-01-28T07:22:34.000Z</updated>
   <id>http://orangecoder.github.io/</id>
   
   <author>
-    <name><![CDATA[李晓平]]></name>
+    <name><![CDATA[orangecoder]]></name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[android 自定义签名]]></title>
+    <link href="http://orangecoder.github.io/2016/01/28/custom-keystore/"/>
+    <id>http://orangecoder.github.io/2016/01/28/custom-keystore/</id>
+    <published>2016-01-28T05:25:16.000Z</published>
+    <updated>2016-01-28T07:22:34.000Z</updated>
+    <content type="html"><![CDATA[<p>生成开发版和发布版的签名，两个签名文件MD5和SHA1值相同，方便第三方插件（微信登录，新浪微博分享，高德地图等等）标识开发者身份<br>最终效果图<br><img src="/image/custom-keystore-i.png" alt=""></p>
+<h3 id="1-生成正式版的keystore">1.生成正式版的keystore</h3><p>在app目录下新建keystore文件夹，点击Build-&gt;Generate Signed APK… 生成一个正式版的keystore(my.jks)<br><img src="/image/custom-keystore-1.png" alt=""></p>
+<h3 id="2-生成开发版keystore">2.生成开发版keystore</h3><p>复制粘贴my.jks,改名为my-debug.jks</p>
+<h3 id="3-修改my-debug-jks的keystore密码">3.修改my-debug.jks的keystore密码</h3><p>打开终端，cd到keystore文件夹下执行以下命令：keytool -storepasswd -keystore my-debug.jks<br>执行后会提示输入证书的当前密码，和新密码以及重复新密码确认。这一步需要将密码改为android<br><img src="/image/custom-keystore-2.png" alt=""></p>
+<h3 id="4-修改keystore的alias">4.修改keystore的alias</h3><p>输入命令：keytool -changealias -keystore my-debug.jks -alias orangecoder -destalias androiddebugkey<br>这个命令会先后提示输入keystore的密码和当前alias的密码。这一步需要将别名修改为androiddebugkey。<br><img src="/image/custom-keystore-3.png" alt=""></p>
+<h3 id="5-修改alias的密码">5.修改alias的密码</h3><p>输入命令：keytool -keypasswd -keystore my-debug.jks -alias androiddebugkey<br>执行后会提示输入keystore密码，alias密码，然后提示输入新的alias密码，将新密码修改为android<br><img src="/image/custom-keystore-4.png" alt=""></p>
+<h3 id="6-项目签名文件配置">6.项目签名文件配置</h3><p>打开app目录下的build.gradle文件，在android任务下加上签名文件设置<br><img src="/image/custom-keystore-5.png" alt=""></p>
+<h3 id="7-看看最终效果">7.看看最终效果</h3><p>打开gradle任务面板，双击android目录下的signingReport任务，可以看到debug版和release版的MD5和SHA1值都是一样的<br><img src="/image/custom-keystore-6.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>生成开发版和发布版的签名，两个签名文件MD5和SHA1值相同，方便第三方插件（微信登录，新浪微博分享，高德地图等等）标识开发者身份<br>最终效果图<br><img src="/image/custom-keystore-i.png" alt=""></p>
+<h3 id=]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[mac下iterm2和zsh配置]]></title>

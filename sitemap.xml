@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://orangecoder.github.io/2016/01/28/custom-keystore/</loc>
+    <lastmod>2016-01-28T07:22:34.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://orangecoder.github.io/2016/01/28/iterm2-zsh/</loc>
     <lastmod>2016-01-28T05:07:56.000Z</lastmod>
   </url>

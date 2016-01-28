@@ -35,11 +35,11 @@
 		</a>
 
 		<hgroup>
-		  <h1 class="header-author"><a href="/">李晓平</a></h1>
+		  <h1 class="header-author"><a href="/">orangecoder</a></h1>
 		</hgroup>
 
 		
-		<p class="header-subtitle">android ffmpeg nodejs</p>
+		<p class="header-subtitle">android ffmpeg nodejs gradle</p>
 		
 
 		
@@ -79,7 +79,7 @@
       <nav id="mobile-nav">
   	<div class="overlay">
   		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">李晓平</h1>
+  		<h1 class="header-author js-mobile-header hide">orangecoder</h1>
   	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
@@ -87,10 +87,10 @@
 				<img lazy-src="null" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author">李晓平</h1>
+			  <h1 class="header-author">orangecoder</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">android ffmpeg nodejs</p>
+			<p class="header-subtitle">android ffmpeg nodejs gradle</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -113,6 +113,64 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-custom-keystore" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/28/custom-keystore/" class="article-date">
+  	<time datetime="2016-01-28T05:25:16.000Z" itemprop="datePublished">2016-01-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/28/custom-keystore/">android 自定义签名</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生成开发版和发布版的签名，两个签名文件MD5和SHA1值相同，方便第三方插件（微信登录，新浪微博分享，高德地图等等）标识开发者身份<br>最终效果图<br><img src="/image/custom-keystore-i.png" alt=""></p>
+<h3 id="1-生成正式版的keystore">1.生成正式版的keystore</h3><p>在app目录下新建keystore文件夹，点击Build-&gt;Generate Signed APK… 生成一个正式版的keystore(my.jks)<br><img src="/image/custom-keystore-1.png" alt=""></p>
+<h3 id="2-生成开发版keystore">2.生成开发版keystore</h3><p>复制粘贴my.jks,改名为my-debug.jks</p>
+<h3 id="3-修改my-debug-jks的keystore密码">3.修改my-debug.jks的keystore密码</h3><p>打开终端，cd到keystore文件夹下执行以下命令：keytool -storepasswd -keystore my-debug.jks<br>执行后会提示输入证书的当前密码，和新密码以及重复新密码确认。这一步需要将密码改为android<br><img src="/image/custom-keystore-2.png" alt=""></p>
+<h3 id="4-修改keystore的alias">4.修改keystore的alias</h3><p>输入命令：keytool -changealias -keystore my-debug.jks -alias orangecoder -destalias androiddebugkey<br>这个命令会先后提示输入keystore的密码和当前alias的密码。这一步需要将别名修改为androiddebugkey。<br><img src="/image/custom-keystore-3.png" alt=""></p>
+<h3 id="5-修改alias的密码">5.修改alias的密码</h3><p>输入命令：keytool -keypasswd -keystore my-debug.jks -alias androiddebugkey<br>执行后会提示输入keystore密码，alias密码，然后提示输入新的alias密码，将新密码修改为android<br><img src="/image/custom-keystore-4.png" alt=""></p>
+<h3 id="6-项目签名文件配置">6.项目签名文件配置</h3><p>打开app目录下的build.gradle文件，在android任务下加上签名文件设置<br><img src="/image/custom-keystore-5.png" alt=""></p>
+<h3 id="7-看看最终效果">7.看看最终效果</h3><p>打开gradle任务面板，双击android目录下的signingReport任务，可以看到debug版和release版的MD5和SHA1值都是一样的<br><img src="/image/custom-keystore-6.png" alt=""></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-iterm2-zsh" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -502,17 +560,64 @@ git push -<span class="keyword">u</span> origin master
 
 
   
+    <article id="post-vpn" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+    <div class="article-meta">
+      <a href="/2015/10/14/vpn/" class="article-date">
+  	<time datetime="2015-10-14T15:16:53.000Z" itemprop="datePublished">2015-10-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/14/vpn/">翻墙攻略</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-_云梯">1. <a href="http://tizipro.com/?r=2171b4d1cdbd6d00" target="_blank" rel="external">云梯</a></h1><p>最大的特点是便宜，最低15元一个月，支持全平台（Windows，Ubuntu，Mac，iphone，Android），<br>支持服务器遍布（日本，美国，新加坡，香港，台湾，英国），相对齐全，<br>满足一般上网查资料需求，不支持大文件下载，属于比较基础的梯子<br>通过我上面的链接购买可以便宜10元</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
   
 </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 李晓平
+    		&copy; 2016 orangecoder
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

@@ -3,18 +3,31 @@
 <head>
   <meta charset="utf-8">
   
-  <title>翻墙攻略 | orangecoder</title>
+  <title>android 自定义签名 | orangecoder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 云梯最大的特点是便宜，最低15元一个月，支持全平台（Windows，Ubuntu，Mac，iphone，Android），支持服务器遍布（日本，美国，新加坡，香港，台湾，英国），相对齐全，满足一般上网查资料需求，不支持大文件下载，属于比较基础的梯子通过我上面的链接购买可以便宜10元">
+  <meta name="description" content="生成开发版和发布版的签名，两个签名文件MD5和SHA1值相同，方便第三方插件（微信登录，新浪微博分享，高德地图等等）标识开发者身份最终效果图
+1.生成正式版的keystore在app目录下新建keystore文件夹，点击Build-&amp;gt;Generate Signed APK… 生成一个正式版的keystore(my.jks)
+2.生成开发版keystore复制粘贴my.jks,改名为my-de">
 <meta property="og:type" content="article">
-<meta property="og:title" content="翻墙攻略">
-<meta property="og:url" content="http://orangecoder.github.io/2015/10/14/vpn/index.html">
+<meta property="og:title" content="android 自定义签名">
+<meta property="og:url" content="http://orangecoder.github.io/2016/01/28/custom-keystore/index.html">
 <meta property="og:site_name" content="orangecoder">
-<meta property="og:description" content="1. 云梯最大的特点是便宜，最低15元一个月，支持全平台（Windows，Ubuntu，Mac，iphone，Android），支持服务器遍布（日本，美国，新加坡，香港，台湾，英国），相对齐全，满足一般上网查资料需求，不支持大文件下载，属于比较基础的梯子通过我上面的链接购买可以便宜10元">
-<meta property="og:updated_time" content="2016-01-28T02:31:48.000Z">
+<meta property="og:description" content="生成开发版和发布版的签名，两个签名文件MD5和SHA1值相同，方便第三方插件（微信登录，新浪微博分享，高德地图等等）标识开发者身份最终效果图
+1.生成正式版的keystore在app目录下新建keystore文件夹，点击Build-&amp;gt;Generate Signed APK… 生成一个正式版的keystore(my.jks)
+2.生成开发版keystore复制粘贴my.jks,改名为my-de">
+<meta property="og:image" content="http://orangecoder.github.io/image/custom-keystore-i.png">
+<meta property="og:image" content="http://orangecoder.github.io/image/custom-keystore-1.png">
+<meta property="og:image" content="http://orangecoder.github.io/image/custom-keystore-2.png">
+<meta property="og:image" content="http://orangecoder.github.io/image/custom-keystore-3.png">
+<meta property="og:image" content="http://orangecoder.github.io/image/custom-keystore-4.png">
+<meta property="og:image" content="http://orangecoder.github.io/image/custom-keystore-5.png">
+<meta property="og:image" content="http://orangecoder.github.io/image/custom-keystore-6.png">
+<meta property="og:updated_time" content="2016-01-28T07:22:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="翻墙攻略">
-<meta name="twitter:description" content="1. 云梯最大的特点是便宜，最低15元一个月，支持全平台（Windows，Ubuntu，Mac，iphone，Android），支持服务器遍布（日本，美国，新加坡，香港，台湾，英国），相对齐全，满足一般上网查资料需求，不支持大文件下载，属于比较基础的梯子通过我上面的链接购买可以便宜10元">
+<meta name="twitter:title" content="android 自定义签名">
+<meta name="twitter:description" content="生成开发版和发布版的签名，两个签名文件MD5和SHA1值相同，方便第三方插件（微信登录，新浪微博分享，高德地图等等）标识开发者身份最终效果图
+1.生成正式版的keystore在app目录下新建keystore文件夹，点击Build-&amp;gt;Generate Signed APK… 生成一个正式版的keystore(my.jks)
+2.生成开发版keystore复制粘贴my.jks,改名为my-de">
   
     <link rel="alternative" href="/atom.xml" title="orangecoder" type="application/atom+xml">
   
@@ -113,11 +126,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-vpn" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-custom-keystore" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/14/vpn/" class="article-date">
-  	<time datetime="2015-10-14T15:16:53.000Z" itemprop="datePublished">2015-10-14</time>
+      <a href="/2016/01/28/custom-keystore/" class="article-date">
+  	<time datetime="2016-01-28T05:25:16.000Z" itemprop="datePublished">2016-01-28</time>
 </a>
     </div>
   
@@ -130,7 +143,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      翻墙攻略
+      android 自定义签名
     </h1>
   
 
@@ -146,7 +159,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-_云梯">1. <a href="http://tizipro.com/?r=2171b4d1cdbd6d00" target="_blank" rel="external">云梯</a></h1><p>最大的特点是便宜，最低15元一个月，支持全平台（Windows，Ubuntu，Mac，iphone，Android），<br>支持服务器遍布（日本，美国，新加坡，香港，台湾，英国），相对齐全，<br>满足一般上网查资料需求，不支持大文件下载，属于比较基础的梯子<br>通过我上面的链接购买可以便宜10元</p>
+        <p>生成开发版和发布版的签名，两个签名文件MD5和SHA1值相同，方便第三方插件（微信登录，新浪微博分享，高德地图等等）标识开发者身份<br>最终效果图<br><img src="/image/custom-keystore-i.png" alt=""></p>
+<h3 id="1-生成正式版的keystore">1.生成正式版的keystore</h3><p>在app目录下新建keystore文件夹，点击Build-&gt;Generate Signed APK… 生成一个正式版的keystore(my.jks)<br><img src="/image/custom-keystore-1.png" alt=""></p>
+<h3 id="2-生成开发版keystore">2.生成开发版keystore</h3><p>复制粘贴my.jks,改名为my-debug.jks</p>
+<h3 id="3-修改my-debug-jks的keystore密码">3.修改my-debug.jks的keystore密码</h3><p>打开终端，cd到keystore文件夹下执行以下命令：keytool -storepasswd -keystore my-debug.jks<br>执行后会提示输入证书的当前密码，和新密码以及重复新密码确认。这一步需要将密码改为android<br><img src="/image/custom-keystore-2.png" alt=""></p>
+<h3 id="4-修改keystore的alias">4.修改keystore的alias</h3><p>输入命令：keytool -changealias -keystore my-debug.jks -alias orangecoder -destalias androiddebugkey<br>这个命令会先后提示输入keystore的密码和当前alias的密码。这一步需要将别名修改为androiddebugkey。<br><img src="/image/custom-keystore-3.png" alt=""></p>
+<h3 id="5-修改alias的密码">5.修改alias的密码</h3><p>输入命令：keytool -keypasswd -keystore my-debug.jks -alias androiddebugkey<br>执行后会提示输入keystore密码，alias密码，然后提示输入新的alias密码，将新密码修改为android<br><img src="/image/custom-keystore-4.png" alt=""></p>
+<h3 id="6-项目签名文件配置">6.项目签名文件配置</h3><p>打开app目录下的build.gradle文件，在android任务下加上签名文件设置<br><img src="/image/custom-keystore-5.png" alt=""></p>
+<h3 id="7-看看最终效果">7.看看最终效果</h3><p>打开gradle任务面板，双击android目录下的signingReport任务，可以看到debug版和release版的MD5和SHA1值都是一样的<br><img src="/image/custom-keystore-6.png" alt=""></p>
 
       
     </div>
@@ -156,15 +176,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/10/15/解决Mac下无法识别Android手机的问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          解决Mac下无法识别Android手机的问题
-        
-      </div>
-    </a>
   
+    <a href="/2016/01/28/iterm2-zsh/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mac下iterm2和zsh配置</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
