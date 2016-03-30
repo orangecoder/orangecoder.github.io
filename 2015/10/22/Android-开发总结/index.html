@@ -5,40 +5,40 @@
   
   <title>Android 开发总结 | orangecoder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. Android中的Service全面总结
-Service的种类
+  <meta name="description" content="1. Android 中的 Service 全面总结
+Service 的种类
 Service 与 Thread 的区别
-Service的生命周期
+Service 的生命周期
 startService 启动服务
 Local 与 Remote 服务绑定
 创建前台服务
 在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService
-在 AndroidManifest">
+在 AndroidMan">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 开发总结">
 <meta property="og:url" content="http://orangecoder.github.io/2015/10/22/Android-开发总结/index.html">
 <meta property="og:site_name" content="orangecoder">
-<meta property="og:description" content="1. Android中的Service全面总结
-Service的种类
+<meta property="og:description" content="1. Android 中的 Service 全面总结
+Service 的种类
 Service 与 Thread 的区别
-Service的生命周期
+Service 的生命周期
 startService 启动服务
 Local 与 Remote 服务绑定
 创建前台服务
 在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService
-在 AndroidManifest">
-<meta property="og:updated_time" content="2016-01-28T02:31:48.000Z">
+在 AndroidMan">
+<meta property="og:updated_time" content="2016-03-30T09:45:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 开发总结">
-<meta name="twitter:description" content="1. Android中的Service全面总结
-Service的种类
+<meta name="twitter:description" content="1. Android 中的 Service 全面总结
+Service 的种类
 Service 与 Thread 的区别
-Service的生命周期
+Service 的生命周期
 startService 启动服务
 Local 与 Remote 服务绑定
 创建前台服务
 在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService
-在 AndroidManifest">
+在 AndroidMan">
   
     <link rel="alternative" href="/atom.xml" title="orangecoder" type="application/atom+xml">
   
@@ -170,10 +170,10 @@ Local 与 Remote 服务绑定
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-_Android中的Service全面总结">1. <a href="http://www.cnblogs.com/newcj/archive/2011/05/30/2061370.html" target="_blank" rel="external">Android中的Service全面总结</a></h3><ul>
-<li>Service的种类</li>
+        <h3 id="1-_Android_中的_Service_全面总结">1. <a href="http://www.cnblogs.com/newcj/archive/2011/05/30/2061370.html" target="_blank" rel="external">Android 中的 Service 全面总结</a></h3><ul>
+<li>Service 的种类</li>
 <li>Service 与 Thread 的区别</li>
-<li>Service的生命周期</li>
+<li>Service 的生命周期</li>
 <li>startService 启动服务</li>
 <li>Local 与 Remote 服务绑定</li>
 <li>创建前台服务</li>
@@ -189,6 +189,26 @@ Local 与 Remote 服务绑定
 <li>View.post(Runnable)</li>
 <li>Handler</li>
 <li>AsyncTask</li>
+</ul>
+<h3 id="4-_View_事件传递">4. <a href="http://a.codekk.com/detail/Android/Trinea/公共技术点之%20View%20事件传递" target="_blank" rel="external">View 事件传递</a></h3><ul>
+<li>Touch 事件都被封装成了 MotionEvent 对象</li>
+<li>事件类型分为 ACTION_DOWN, ACTION_UP, ACTION_MOVE, ACTION_POINTER_DOWN, ACTION_POINTER_UP, ACTION_CANCEL</li>
+<li>对事件的处理包括三类，分别为传递——dispatchTouchEvent()函数、拦截——onInterceptTouchEvent()函数、消费——onTouchEvent()函数和 OnTouchListener</li>
+</ul>
+<h3 id="5-_View_绘制流程">5. <a href="http://a.codekk.com/detail/Android/lightSky/公共技术点之%20View%20绘制流程" target="_blank" rel="external">View 绘制流程</a></h3><ul>
+<li>measure</li>
+<li>layout</li>
+<li>draw</li>
+<li>invalidate(), requestLayout() </li>
+</ul>
+<h3 id="6-_Android_动画基础">6. <a href="http://a.codekk.com/detail/Android/lightSky/公共技术点之%20Android%20动画基础" target="_blank" rel="external">Android 动画基础</a></h3><ul>
+<li>传统 View 动画: Tween(alpha,scale,translate,rotate), Frame</li>
+<li>Property Animation: ValueAnimator, ObjectAnimator</li>
+</ul>
+<h3 id="7-_Android_SQlite_总结">7. <a href="http://blog.csdn.net/liuhaomatou/article/details/23797107" target="_blank" rel="external">Android SQlite 总结</a></h3><ul>
+<li>Android平台下数据库相关类: SQLiteOpenHelper, SQLiteDatabase, SQLiteCursor</li>
+<li>SQLite内建语法表</li>
+<li>SQLite内建函数表</li>
 </ul>
 
       
