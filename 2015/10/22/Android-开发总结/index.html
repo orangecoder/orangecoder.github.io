@@ -27,7 +27,7 @@ Local 与 Remote 服务绑定
 创建前台服务
 在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService
 在 AndroidMan">
-<meta property="og:updated_time" content="2016-03-30T09:45:24.000Z">
+<meta property="og:updated_time" content="2016-03-31T02:45:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 开发总结">
 <meta name="twitter:description" content="1. Android 中的 Service 全面总结
@@ -187,8 +187,8 @@ Local 与 Remote 服务绑定
 <h3 id="3-_Android中的几种多线程实现">3. <a href="http://blog.sina.com.cn/s/blog_74e9d98d0101g9iw.html" target="_blank" rel="external">Android中的几种多线程实现 </a></h3><ul>
 <li>Activity.runOnUiThread(Runnable)</li>
 <li>View.post(Runnable)</li>
-<li>Handler</li>
-<li>AsyncTask</li>
+<li>Handler, HandlerThread </li>
+<li>AsyncTask, LoaderManager</li>
 </ul>
 <h3 id="4-_View_事件传递">4. <a href="http://a.codekk.com/detail/Android/Trinea/公共技术点之%20View%20事件传递" target="_blank" rel="external">View 事件传递</a></h3><ul>
 <li>Touch 事件都被封装成了 MotionEvent 对象</li>
@@ -209,6 +209,12 @@ Local 与 Remote 服务绑定
 <li>Android平台下数据库相关类: SQLiteOpenHelper, SQLiteDatabase, SQLiteCursor</li>
 <li>SQLite内建语法表</li>
 <li>SQLite内建函数表</li>
+</ul>
+<h3 id="8-_Android_布局优化">8. <a href="http://www.infoq.com/cn/articles/android-optimise-layout" target="_blank" rel="external">Android 布局优化</a></h3><ul>
+<li>尽量多使用 RelativeLayout，不要使用绝对布局 AbsoluteLayout</li>
+<li>将可复用的组件抽取出来并通过 <include> 标签使用</include></li>
+<li>使用 <viewstub> 标签来加载一些不常用的布局</viewstub></li>
+<li>使用 <merge> 标签减少布局的嵌套层次</merge></li>
 </ul>
 
       
