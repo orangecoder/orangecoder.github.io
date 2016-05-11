@@ -15,7 +15,7 @@ Java 线程阻塞(Blocked)的类型:1）调用 sleep 函数进入睡眠状态，
 <meta property="og:description" content="1. Java Thread 类总结
 Java 的线程有4种状态: 新建(New)、运行(Runnable)、阻塞(Blocked)、结束(Dead)
 Java 线程阻塞(Blocked)的类型:1）调用 sleep 函数进入睡眠状态，Thread.sleep(1000) 或者 TimeUnit.SECONDS.sleep(1)，sleep 不会释放锁2）等待(wait)某个事件，分为两种，(wa">
-<meta property="og:updated_time" content="2016-04-18T05:52:54.000Z">
+<meta property="og:updated_time" content="2016-05-11T04:24:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 开发总结">
 <meta name="twitter:description" content="1. Java Thread 类总结
@@ -252,7 +252,13 @@ Java 线程阻塞(Blocked)的类型:1）调用 sleep 函数进入睡眠状态，
 <li>抽象方法要被实现，所以不能是静态的，也不能是私有的。</li>
 <li>接口可继承接口，并可多继承接口，但类只能单根继承。<br>特别是对于公用的实现代码，抽象类有它的优点。抽象类能够保证实现的层次关系，避免代码重复。然而，即使在使用抽象类的场合，也不要忽视通过接口定义行为模型的原则。从实践的角度来看，如果依赖于抽象类来定义行为，往往导致过于复杂的继承关系，而通过接口定义行为能够更有效地分离行为与实现，为代码的维护和修改带来方便。</li>
 </ul>
-<h3 id="7-_精选30道_Java_笔试题解答">7. <a href="http://www.cnblogs.com/lanxuezaipiao/p/3371224.html" target="_blank" rel="external">精选30道 Java 笔试题解答</a></h3>
+<h3 id="7-_Java_线程锁机制：synchronized、Lock、Condition">7. <a href="http://blog.csdn.net/vking_wang/article/details/9952063" target="_blank" rel="external">Java 线程锁机制：synchronized、Lock、Condition</a></h3><ul>
+<li>synchronized<br>1) 原子性<br>原子性意味着个时刻，只有一个线程能够执行一段代码<br>2) 可见性<br>确保释放锁之前对共享数据做出的更改对于随后获得该锁的另一个线程是可见的<br>原理：当对象获取锁时，它首先使自己的高速缓存无效，这样就可以保证直接从主内存中装入变量。同样，在对象释放锁之前，它会刷新其高速缓存，强制使已做的任何更改都出现在主内存中。 这样，会保证在同一个锁上同步的两个线程看到在 synchronized 块内修改的变量的相同值。类似的规则也存在于 volatile 变量上。volatile 只保证可见性，不保证原子性。<br>3）何时要同步<br>一致性同步：当修改多个相关值时，您想要其它线程原子地看到这组更改，要么看到全部更改，要么什么也看不到。<br>4）synchronize 的限制<br>它无法中断一个正在等候获得锁的线程；<br>也无法通过投票得到锁，如果不想等下去，也就没法得到锁；<br>同步还要求锁的释放只能在与获得锁所在的堆栈帧相同的堆栈帧中进行，多数情况下，这没问题（而且与异常处理交互得很好），但是，确实存在一些非块结构的锁定更合适的情况</li>
+<li>ReentrantLock<br>java.util.concurrent.lock 中的 Lock 框架是锁定的一个抽象，它允许把锁定的实现作为 Java 类，而不是作为语言的特性来实现。这就为 Lock 的多种实现留下了空间，各种实现可能有不同的调度算法、性能特性或者锁定语义。</li>
+<li>读写锁 ReadWriteLock<br>与互斥锁定相比，读-写锁定允许对共享数据进行更高级别的并发访问。虽然一次只有一个线程（writer 线程）可以修改共享数据，但在许多情况下，任何数量的线程可以同时读取共享数据（reader 线程）</li>
+<li>线程间通信 Condition<br>Condition 可以替代传统的线程间通信，用 await() 替换 wait()，用 signal() 替换 notify()，用 signalAll() 替换 notifyAll()。</li>
+</ul>
+<h3 id="8-_精选30道_Java_笔试题解答">8. <a href="http://www.cnblogs.com/lanxuezaipiao/p/3371224.html" target="_blank" rel="external">精选30道 Java 笔试题解答</a></h3>
       
     </div>
     
