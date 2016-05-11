@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java Concurrency Utilities | orangecoder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="阻塞队列 BlockingQueue
+
+BlockingQueue 通常用于一个线程生产对象，而另外一个线程消费这些对象的场景
+BlockingQueue 具有 4 组不同的方法用于插入、移除以及对队列中的元素进行检查。如果请求的操作不能得到立即执行的话，每个方法的表现也不同。这些方法如下：
+
+
+
+操作
+抛异常
+特定值
+阻塞
+超时
+
+
+
+
+插入
+add(o)
+offer(o)
+put(o)
+off">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Concurrency Utilities">
+<meta property="og:url" content="http://orangecoder.github.io/2016/05/11/java-concurrency/index.html">
+<meta property="og:site_name" content="orangecoder">
+<meta property="og:description" content="阻塞队列 BlockingQueue
+
+BlockingQueue 通常用于一个线程生产对象，而另外一个线程消费这些对象的场景
+BlockingQueue 具有 4 组不同的方法用于插入、移除以及对队列中的元素进行检查。如果请求的操作不能得到立即执行的话，每个方法的表现也不同。这些方法如下：
+
+
+
+操作
+抛异常
+特定值
+阻塞
+超时
+
+
+
+
+插入
+add(o)
+offer(o)
+put(o)
+off">
+<meta property="og:image" content="http://orangecoder.github.io/image/java- concurrency-1.png">
+<meta property="og:image" content="http://orangecoder.github.io/image/java- concurrency-2.png">
+<meta property="og:updated_time" content="2016-05-11T07:14:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Concurrency Utilities">
+<meta name="twitter:description" content="阻塞队列 BlockingQueue
+
+BlockingQueue 通常用于一个线程生产对象，而另外一个线程消费这些对象的场景
+BlockingQueue 具有 4 组不同的方法用于插入、移除以及对队列中的元素进行检查。如果请求的操作不能得到立即执行的话，每个方法的表现也不同。这些方法如下：
+
+
+
+操作
+抛异常
+特定值
+阻塞
+超时
+
+
+
+
+插入
+add(o)
+offer(o)
+put(o)
+off">
+  
+    <link rel="alternative" href="/atom.xml" title="orangecoder" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/image/me.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">orangecoder</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">android ffmpeg nodejs gradle</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/orangecoder" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">orangecoder</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/image/me.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">orangecoder</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">android ffmpeg nodejs gradle</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/orangecoder" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-java-concurrency" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/11/java-concurrency/" class="article-date">
+  	<time datetime="2016-05-11T06:21:27.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java Concurrency Utilities
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>阻塞队列 BlockingQueue</li>
+</ul>
+<p>BlockingQueue 通常用于一个线程生产对象，而另外一个线程消费这些对象的场景<br><img src="/image/java- concurrency-1.png" alt=""></p>
+<p>BlockingQueue 具有 4 组不同的方法用于插入、移除以及对队列中的元素进行检查。如果请求的操作不能得到立即执行的话，每个方法的表现也不同。这些方法如下：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>抛异常</th>
+<th>特定值</th>
+<th>阻塞</th>
+<th>超时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入</td>
+<td>add(o)</td>
+<td>offer(o)</td>
+<td>put(o)</td>
+<td>offer(o, timeout, timeunit)</td>
+</tr>
+<tr>
+<td>移除</td>
+<td>remove(o)</td>
+<td>poll(o)</td>
+<td>take(o)</td>
+<td>poll(timeout, timeunit)</td>
+</tr>
+<tr>
+<td>检查</td>
+<td>element(o)</td>
+<td>peek(o)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>四组不同的行为方式解释：<br>1）抛异常：如果试图的操作无法立即执行，抛一个异常。<br>2）特定值：如果试图的操作无法立即执行，返回一个特定的值(常常是 true / false)。<br>3）阻塞：如果试图的操作无法立即执行，该方法调用将会发生阻塞，直到能够执行。<br>4）超时：如果试图的操作无法立即执行，该方法调用将会发生阻塞，直到能够执行，但等待时间不会超过给定值。返回一个特定值以告知该操作是否成功(典型的是 true / false)。</p>
+<p>BlockingQueue 的实现<br>BlockingQueue 是个接口，你需要使用它的实现之一来使用 BlockingQueue。java.util.concurrent 具有以下 BlockingQueue 接口的实现(Java 6)：<br>1）ArrayBlockingQueue<br>2）DelayQueue<br>3）LinkedBlockingQueue<br>4）PriorityBlockingQueue<br>5）SynchronousQueue</p>
+<ul>
+<li>阻塞双端队列 BlockingDeque</li>
+</ul>
+<p>在线程既是一个队列的生产者又是这个队列的消费者的时候可以使用到 BlockingDeque。如果生产者线程需要在队列的两端都可以插入数据，消费者线程需要在队列的两端都可以移除数据，这个时候也可以使用 BlockingDeque<br><img src="/image/java- concurrency-2.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>抛异常</th>
+<th>特定值</th>
+<th>阻塞</th>
+<th>超时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入</td>
+<td>addLast(o)</td>
+<td>offerLast(o)</td>
+<td>putLast(o)</td>
+<td>offerLast(o, timeout, timeunit)</td>
+</tr>
+<tr>
+<td>移除</td>
+<td>removeLast(o)</td>
+<td>pollLast(o)</td>
+<td>takeLast(o)</td>
+<td>pollLast(timeout, timeunit)</td>
+</tr>
+<tr>
+<td>检查</td>
+<td>getLast(o)</td>
+<td>peekLast(o)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>java.util.concurrent 包提供了以下 BlockingDeque 接口的实现类：<br>1) LinkedBlockingDeque</p>
+<p><a href="http://tutorials.jenkov.com/java-util-concurrent/index.html" target="_blank" rel="external">参考链接English</a><br><a href="http://blog.csdn.net/defonds/article/details/44021605" target="_blank" rel="external">参考链接Chinese</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/20/android-media/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android 多媒体开发总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 orangecoder
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

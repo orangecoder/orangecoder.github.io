@@ -114,6 +114,137 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-java-concurrency" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/11/java-concurrency/" class="article-date">
+  	<time datetime="2016-05-11T06:21:27.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/java-concurrency/">Java Concurrency Utilities</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>阻塞队列 BlockingQueue</li>
+</ul>
+<p>BlockingQueue 通常用于一个线程生产对象，而另外一个线程消费这些对象的场景<br><img src="/image/java- concurrency-1.png" alt=""></p>
+<p>BlockingQueue 具有 4 组不同的方法用于插入、移除以及对队列中的元素进行检查。如果请求的操作不能得到立即执行的话，每个方法的表现也不同。这些方法如下：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>抛异常</th>
+<th>特定值</th>
+<th>阻塞</th>
+<th>超时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入</td>
+<td>add(o)</td>
+<td>offer(o)</td>
+<td>put(o)</td>
+<td>offer(o, timeout, timeunit)</td>
+</tr>
+<tr>
+<td>移除</td>
+<td>remove(o)</td>
+<td>poll(o)</td>
+<td>take(o)</td>
+<td>poll(timeout, timeunit)</td>
+</tr>
+<tr>
+<td>检查</td>
+<td>element(o)</td>
+<td>peek(o)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>四组不同的行为方式解释：<br>1）抛异常：如果试图的操作无法立即执行，抛一个异常。<br>2）特定值：如果试图的操作无法立即执行，返回一个特定的值(常常是 true / false)。<br>3）阻塞：如果试图的操作无法立即执行，该方法调用将会发生阻塞，直到能够执行。<br>4）超时：如果试图的操作无法立即执行，该方法调用将会发生阻塞，直到能够执行，但等待时间不会超过给定值。返回一个特定值以告知该操作是否成功(典型的是 true / false)。</p>
+<p>BlockingQueue 的实现<br>BlockingQueue 是个接口，你需要使用它的实现之一来使用 BlockingQueue。java.util.concurrent 具有以下 BlockingQueue 接口的实现(Java 6)：<br>1）ArrayBlockingQueue<br>2）DelayQueue<br>3）LinkedBlockingQueue<br>4）PriorityBlockingQueue<br>5）SynchronousQueue</p>
+<ul>
+<li>阻塞双端队列 BlockingDeque</li>
+</ul>
+<p>在线程既是一个队列的生产者又是这个队列的消费者的时候可以使用到 BlockingDeque。如果生产者线程需要在队列的两端都可以插入数据，消费者线程需要在队列的两端都可以移除数据，这个时候也可以使用 BlockingDeque<br><img src="/image/java- concurrency-2.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>抛异常</th>
+<th>特定值</th>
+<th>阻塞</th>
+<th>超时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入</td>
+<td>addLast(o)</td>
+<td>offerLast(o)</td>
+<td>putLast(o)</td>
+<td>offerLast(o, timeout, timeunit)</td>
+</tr>
+<tr>
+<td>移除</td>
+<td>removeLast(o)</td>
+<td>pollLast(o)</td>
+<td>takeLast(o)</td>
+<td>pollLast(timeout, timeunit)</td>
+</tr>
+<tr>
+<td>检查</td>
+<td>getLast(o)</td>
+<td>peekLast(o)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>java.util.concurrent 包提供了以下 BlockingDeque 接口的实现类：<br>1) LinkedBlockingDeque</p>
+<p><a href="http://tutorials.jenkov.com/java-util-concurrent/index.html" target="_blank" rel="external">参考链接English</a><br><a href="http://blog.csdn.net/defonds/article/details/44021605" target="_blank" rel="external">参考链接Chinese</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-android-media" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -904,57 +1035,10 @@ git push -<span class="keyword">u</span> origin master
 
 
   
-    <article id="post-vpn" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2015/10/14/vpn/" class="article-date">
-  	<time datetime="2015-10-14T15:16:53.000Z" itemprop="datePublished">2015-10-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/14/vpn/">翻墙攻略</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-_云梯">1. <a href="http://tizipro.com/?r=2171b4d1cdbd6d00" target="_blank" rel="external">云梯</a></h1><p>最大的特点是便宜，最低15元一个月，支持全平台（Windows，Ubuntu，Mac，iphone，Android），<br>支持服务器遍布（日本，美国，新加坡，香港，台湾，英国），相对齐全，<br>满足一般上网查资料需求，不支持大文件下载，属于比较基础的梯子<br>通过我上面的链接购买可以便宜10元</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
