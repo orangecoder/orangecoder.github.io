@@ -114,6 +114,59 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-解决Mac下无法识别Android手机的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/15/解决Mac下无法识别Android手机的问题/" class="article-date">
+  	<time datetime="2015-10-14T16:26:38.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/解决Mac下无法识别Android手机的问题/">解决Mac下无法识别Android手机的问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-_插入手机，打开命令行终端，输入以下命令">1. 插入手机，打开命令行终端，输入以下命令</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system_profiler SPUSBDataType</span><br></pre></td></tr></table></figure>
+<p>得到以下结果<br><img src="/image/解决Mac下无法识别Android手机的问题-1.png" alt=""></p>
+<h3 id="2-_如果没有得到上面_Vendor_ID_，拔出手机，重复以上动作">2. 如果没有得到上面 Vendor ID ，拔出手机，重复以上动作</h3><h3 id="3-_在命令行终端输入下面命令_（0x2a45_根据你的_Vendor_ID_值来替换）">3. 在命令行终端输入下面命令 （0x2a45 根据你的 Vendor ID 值来替换）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#34;0x2a45&#34; &#62; ~/.android/adb_usb.ini</span><br></pre></td></tr></table></figure>
+<h3 id="4-_重启adb后就可以了">4. 重启adb后就可以了</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb kill-server</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-vpn" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
