@@ -114,6 +114,102 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Android-开发总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/22/Android-开发总结/" class="article-date">
+  	<time datetime="2015-10-22T15:14:32.000Z" itemprop="datePublished">2015-10-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/22/Android-开发总结/">Android 开发总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-_Android_中的_Service_全面总结">1. <a href="http://www.cnblogs.com/newcj/archive/2011/05/30/2061370.html" target="_blank" rel="external">Android 中的 Service 全面总结</a></h3><ul>
+<li>Service 的种类</li>
+<li>Service 与 Thread 的区别</li>
+<li>Service 的生命周期</li>
+<li>startService 启动服务</li>
+<li>Local 与 Remote 服务绑定</li>
+<li>创建前台服务</li>
+<li>在什么情况下使用 startService 或 bindService 或 同时使用startService 和 bindService</li>
+<li>在 AndroidManifest.xml 里 Service 元素的常见选项</li>
+</ul>
+<h3 id="2-_Android中BroadCastReceiver使用">2. <a href="http://www.cnblogs.com/jico/articles/1838293.html" target="_blank" rel="external">Android中BroadCastReceiver使用</a></h3><ul>
+<li>静态注册</li>
+<li>动态注册</li>
+</ul>
+<h3 id="3-_Android中的几种多线程实现">3. <a href="http://blog.sina.com.cn/s/blog_74e9d98d0101g9iw.html" target="_blank" rel="external">Android中的几种多线程实现 </a></h3><ul>
+<li>Activity.runOnUiThread(Runnable)</li>
+<li>View.post(Runnable)</li>
+<li>Handler, HandlerThread </li>
+<li>AsyncTask, LoaderManager</li>
+</ul>
+<h3 id="4-_View_事件传递">4. <a href="http://a.codekk.com/detail/Android/Trinea/公共技术点之%20View%20事件传递" target="_blank" rel="external">View 事件传递</a></h3><ul>
+<li>Touch 事件都被封装成了 MotionEvent 对象</li>
+<li>事件类型分为 ACTION_DOWN, ACTION_UP, ACTION_MOVE, ACTION_POINTER_DOWN, ACTION_POINTER_UP, ACTION_CANCEL</li>
+<li>对事件的处理包括三类，分别为传递——dispatchTouchEvent()函数、拦截——onInterceptTouchEvent()函数、消费——onTouchEvent()函数和 OnTouchListener</li>
+</ul>
+<h3 id="5-_View_绘制流程">5. <a href="http://a.codekk.com/detail/Android/lightSky/公共技术点之%20View%20绘制流程" target="_blank" rel="external">View 绘制流程</a></h3><ul>
+<li>measure</li>
+<li>layout</li>
+<li>draw</li>
+<li>invalidate(), requestLayout() </li>
+</ul>
+<h3 id="6-_Android_动画基础">6. <a href="http://a.codekk.com/detail/Android/lightSky/公共技术点之%20Android%20动画基础" target="_blank" rel="external">Android 动画基础</a></h3><ul>
+<li>传统 View 动画: Tween(alpha,scale,translate,rotate), Frame</li>
+<li>Property Animation: ValueAnimator, ObjectAnimator</li>
+</ul>
+<h3 id="7-_Android_SQlite_总结">7. <a href="http://blog.csdn.net/liuhaomatou/article/details/23797107" target="_blank" rel="external">Android SQlite 总结</a></h3><ul>
+<li>Android平台下数据库相关类: SQLiteOpenHelper, SQLiteDatabase, SQLiteCursor</li>
+<li>SQLite内建语法表</li>
+<li>SQLite内建函数表</li>
+</ul>
+<h3 id="8-_Android_布局优化">8. <a href="http://www.infoq.com/cn/articles/android-optimise-layout" target="_blank" rel="external">Android 布局优化</a></h3><ul>
+<li>尽量多使用 RelativeLayout，不要使用绝对布局 AbsoluteLayout</li>
+<li>将可复用的组件抽取出来并通过 <include> 标签使用</include></li>
+<li>使用 <viewstub> 标签来加载一些不常用的布局</viewstub></li>
+<li>使用 <merge> 标签减少布局的嵌套层次</merge></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-解决Mac下无法识别Android手机的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

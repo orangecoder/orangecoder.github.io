@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://orangecoder.github.io/2016/06/04/design-pattern/</loc>
+    <lastmod>2016-06-05T03:45:13.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://orangecoder.github.io/2016/05/13/android-views/</loc>
     <lastmod>2016-05-13T06:13:09.000Z</lastmod>
   </url>
@@ -42,12 +47,12 @@
   </url>
   
   <url>
-    <loc>http://orangecoder.github.io/2015/11/22/brew-install-mysql-on-mac-os/</loc>
+    <loc>http://orangecoder.github.io/2015/10/14/vpn/</loc>
     <lastmod>2016-01-28T02:31:48.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://orangecoder.github.io/2015/10/14/vpn/</loc>
+    <loc>http://orangecoder.github.io/2015/11/22/brew-install-mysql-on-mac-os/</loc>
     <lastmod>2016-01-28T02:31:48.000Z</lastmod>
   </url>
   
