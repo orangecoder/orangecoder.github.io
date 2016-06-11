@@ -665,7 +665,7 @@ git push -<span class="keyword">u</span> origin master
     <link href="http://orangecoder.github.io/2015/10/22/Android-%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"/>
     <id>http://orangecoder.github.io/2015/10/22/Android-开发总结/</id>
     <published>2015-10-22T15:14:32.000Z</published>
-    <updated>2016-06-11T12:05:59.000Z</updated>
+    <updated>2016-06-11T12:28:11.000Z</updated>
     <content type="html"><![CDATA[<h3 id="1-_Android_中的_Service_全面总结">1. <a href="http://www.cnblogs.com/newcj/archive/2011/05/30/2061370.html" target="_blank" rel="external">Android 中的 Service 全面总结</a></h3><ul>
 <li>Service 的种类</li>
 <li>Service 与 Thread 的区别</li>
@@ -708,9 +708,9 @@ git push -<span class="keyword">u</span> origin master
 </ul>
 <h3 id="8-_Android_布局优化">8. <a href="http://www.infoq.com/cn/articles/android-optimise-layout" target="_blank" rel="external">Android 布局优化</a></h3><ul>
 <li>尽量多使用 RelativeLayout，不要使用绝对布局 AbsoluteLayout</li>
-<li>将可复用的组件抽取出来并通过 <include> 标签使用</include></li>
-<li>使用 <viewstub> 标签来加载一些不常用的布局</viewstub></li>
-<li>使用 <merge> 标签减少布局的嵌套层次</merge></li>
+<li>将可复用的组件抽取出来并通过 <code>&lt;include/&gt;</code> 标签使用</li>
+<li>使用 <code>&lt;ViewStub/&gt;</code> 标签来加载一些不常用的布局</li>
+<li>使用 <code>&lt;merge/&gt;</code> 标签减少布局的嵌套层次</li>
 </ul>
 ]]></content>
     <summary type="html">
