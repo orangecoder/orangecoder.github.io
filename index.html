@@ -114,6 +114,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-mvc-mvp-mvvm" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/11/mvc-mvp-mvvm/" class="article-date">
+  	<time datetime="2016-06-11T12:06:56.000Z" itemprop="datePublished">2016-06-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/11/mvc-mvp-mvvm/">mvc mvp mvvm 总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>常用的软件架构模式大概可以分为以下三种:<br>MVC：Model-View-Controller<br>MVP：Model-View-Presenter<br>MVVM：Model-View-ViewModel</p>
+<ul>
+<li>三者的共同点，也就是 Model 和 View</li>
+</ul>
+<ol>
+<li>Model 就是领域模型，数据对象，同时，提供外部对应用程序数据的操作的接口，也可能在数据变化时发出变更通知。Model 不依赖于 View 的实现，只要外部程序调用 Model 的接口就能够实现对数据的增删改查。</li>
+<li>View 就是 UI 层，提供对最终用户的交互操作功能，包括 UI 展现代码及一些相关的界面逻辑代码。</li>
+</ol>
+<ul>
+<li>三者的差异在于如何粘合 View 和 Model，实现用户的交互操作以及变更通知</li>
+</ul>
+<p><img src="/image/mvc-mvp-mvvm-1.png" alt=""></p>
+<ol>
+<li>Controller 接收 View 的操作事件，根据事件不同，或者调用 Model 的接口进行数据操作，或者进行 View 的跳转，从而也意味着一个 Controller 可以对应多个 View。Controller 对 View 的实现不太关心，只会被动地接收，Model 的数据变更不通过 Controller 直接通知 View，通常 View 采用观察者模式监听 Model 的变化。</li>
+<li>Presenter，与 Controller 一样，接收 View 的命令，对 Model 进行操作；与 Controller 不同的是 Presenter 会反作用于 View，Model 的变更通知首先被 Presenter 获得，然后 Presenter 再去更新 View。一个 Presenter 只对应于一个 View。根据 Presenter 和 View 对逻辑代码分担的程度不同，这种模式又有两种情况：Passive View 和 Supervisor Controller。</li>
+<li>ViewModel，注意这里的 “Model” 指的是 View 的 Model，跟上面那个 Model 不是一回事。所谓 View 的 Model 就是包含 View 的一些数据属性和操作的这么一个东东，这种模式的关键技术就是数据绑定（data binding），View 的变化会直接影响 ViewModel，ViewModel 的变化或者内容也会直接体现在 View 上。这种模式实际上是框架替应用开发者做了一些工作，开发者只需要较少的代码就能实现比较复杂的交互。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-design-pattern" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -960,106 +1027,6 @@ $ <span class="keyword">update</span> <span class="keyword">user</span> <span cl
 <li><a href="http://blog.neten.de/posts/2014/01/27/install-mysql-using-homebrew/" target="_blank" rel="external">http://blog.neten.de/posts/2014/01/27/install-mysql-using-homebrew/</a></li>
 </ul>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-git-常用命令" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/23/git-常用命令/" class="article-date">
-  	<time datetime="2015-10-22T16:40:08.000Z" itemprop="datePublished">2015-10-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/23/git-常用命令/">git 常用命令</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-_初始化一个项目">1. 初始化一个项目</h3><pre><code><span class="keyword">mkdir</span> <span class="keyword">App</span>
-<span class="keyword">cd</span> <span class="keyword">App</span>
-git init
-touch README
-git add README
-git commit -<span class="keyword">m</span> 'first commit'
-git remote add origin git@github.com:orangecoder/<span class="keyword">App</span>.git
-git push -<span class="keyword">u</span> origin master
-</code></pre><h3 id="2-_让gitignore文件生效命令">2. 让gitignore文件生效命令</h3><pre><code>git rm -r <span class="comment">--cached .</span>
-</code></pre><h3 id="3-_远程仓库相关命令">3. 远程仓库相关命令</h3><pre><code>检出仓库：$ git <span class="built_in">clone</span> git://github.com/jquery/jquery.git
-查看远程仓库：$ git remote -v
-添加远程仓库：$ git remote add [name] [url]
-删除远程仓库：$ git remote rm [name]
-修改远程仓库：$ git remote <span class="built_in">set</span>-url --push [name] [newUrl]
-拉取远程仓库：$ git pull [remoteName] [<span class="built_in">local</span>BranchName]
-推送远程仓库：$ git push [remoteName] [<span class="built_in">local</span>BranchName]
-*如果想把本地的某个分支<span class="built_in">test</span>提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫<span class="built_in">test</span>的分支，如下：
-<span class="variable">$git</span> push origin <span class="built_in">test</span>:master         // 提交本地<span class="built_in">test</span>分支作为远程的master分支
-<span class="variable">$git</span> push origin <span class="built_in">test</span>:<span class="built_in">test</span>           // 提交本地<span class="built_in">test</span>分支作为远程的<span class="built_in">test</span>分支
-</code></pre><h3 id="4-_分支(branch)操作相关命令">4. 分支(branch)操作相关命令</h3><pre><code>查看本地分支：<span class="variable">$ </span>git branch
-查看远程分支：<span class="variable">$ </span>git branch -r
-创建本地分支：<span class="variable">$ </span>git branch [name] ----注意新分支创建后不会自动切换为当前分支
-切换分支：<span class="variable">$ </span>git checkout [name]
-创建新分支并立即切换到新分支：<span class="variable">$ </span>git checkout -b [name]
-删除分支：<span class="variable">$ </span>git branch -d [name] ---- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-<span class="constant">D选</span>项
-合并分支：<span class="variable">$ </span>git merge [name] ----将名称为[name]的分支与当前分支合并
-创建远程分支(本地分支push到远程)：<span class="variable">$ </span>git push origin [name]
-删除远程分支：<span class="variable">$ </span>git push origin <span class="symbol">:heads/</span>[name] 或 <span class="variable">$ </span>gitpush origin <span class="symbol">:</span>[name]
-*创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)
-<span class="variable">$git</span> symbolic-ref <span class="constant">HEAD </span>refs/heads/[name]
-<span class="variable">$rm</span> .git/index
-<span class="variable">$git</span> clean -fdx
-</code></pre><h3 id="5-_版本(tag)操作相关命令">5. 版本(tag)操作相关命令</h3><pre><code>查看版本：$ git <span class="keyword">tag</span>
-<span class="title">创建版本：$</span> git <span class="keyword">tag</span> <span class="title">[name</span>]
-删除版本：$ git <span class="keyword">tag</span> <span class="title">-d</span> [name]
-查看远程版本：$ git <span class="keyword">tag</span> <span class="title">-r</span>
-创建远程版本(本地版本push到远程)：$ git push origin [name]
-删除远程版本：$ git push origin :refs/tags/[name]
-合并远程仓库的<span class="operator">tag</span>到本地：$ git pull origin --tags
-上传本地<span class="operator">tag</span>到远程仓库：$ git push origin --tags
-创建带注释的<span class="operator">tag</span>：$ git <span class="keyword">tag</span> <span class="title">-a</span> [name] -m 'yourMessage'
-</code></pre><h3 id="6-_子模块(submodule)相关操作命令">6. 子模块(submodule)相关操作命令</h3><pre><code>添加子模块：<span class="variable">$ </span>git submodule add [url] [path]
-   如：<span class="variable">$git</span> submodule add <span class="symbol">git:</span>/<span class="regexp">/github.com/soberh</span><span class="regexp">/ui-libs.git src/main</span><span class="regexp">/webapp/ui</span>-libs
-初始化子模块：<span class="variable">$ </span>git submodule init  ----只在首次检出仓库时运行一次就行
-更新子模块：<span class="variable">$ </span>git submodule update ----每次更新或切换分支后都需要运行一下
-删除子模块：（分<span class="number">4</span>步走哦）
-<span class="number">1</span>) <span class="variable">$ </span>git rm --cached [path]
-<span class="number">2</span>) 编辑“.gitmodules”文件，将子模块的相关配置节点删除掉
-<span class="number">3</span>) 编辑“ .git/config”文件，将子模块的相关配置节点删除掉
-<span class="number">4</span>) 手动删除子模块残留的目录
-</code></pre><h3 id="7-_git乱码解决方案汇总">7. <a href="https://gist.github.com/vkyii/1079783" target="_blank" rel="external">git乱码解决方案汇总</a></h3>
       
     </div>
     
